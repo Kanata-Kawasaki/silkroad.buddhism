@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>シルクロード仏教文化研究会</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+.hidden {
+    display: none;
+}
+</style>
+<style>
+    /* Modal styles for image enlargement */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        padding-top: 50px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.9);
+    }
+    
+    .modal-content {
+        margin: auto;
+        display: block;
+        max-width: 90%;
+        max-height: 90%;
+    }
+    
+    .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+    
+    .close:hover,
+    .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    .gallery-item img {
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    
+    .gallery-item img:hover {
+        opacity: 0.8;
+    }
+    </style>
+</head>
+<body>
+    <!-- Full-screen background slider -->
+    <div class="bg-slider">
+        <div class="bg-slider-item active" data-depth="0.1"></div>
+        <div class="bg-slider-item" data-depth="0.2"></div>
+    </div>
+    
+    <!-- Header with navigation -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>シルクロード仏教文化研究会</h1>
+                <p>Silk Road Buddhist Culture Research Group</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#about">研究会について</a></li>
+                    <li><a href="#events">イベント</a></li>
+                    <li><a href="#contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero section - 画像のみ -->
+    <section class="hero">
+        <div class="container">
+            <!-- 画像のみ - テキスト削除 -->
+        </div>
+    </section>
+
+    <!-- About section -->
+    <section id="about" class="about">
+        <div class="about-bg-image"></div>
+        <div class="container">
+            <div class="hero-text">
+                <h1 class="animate-text">シルクロード仏教文化研究会</h1>
+                <h2 class="animate-text">Silk Road Buddhist Culture Research Group</h2>
+                <p class="animate-text">本研究会は、考古学・美術史・文献学・保存科学など、複合的な視座からの議論を実践し、主に若手研究者の活躍を促進する場です。</p>
+                <a href="#events" class="btn">次回のイベントを見る</a>
+            </div>
+            <h2 class="section-title" style="margin-top: 2rem;">研究会について</h2>
+            <div class="about-content-vertical">
+                <div class="about-text">
+                    <h3>本研究会の趣旨</h3>
+                    <p>本研究会は、シルクロード（＝インド・中央アジア・西域）の仏教文化について、考古学・美術史・文献学・保存科学などの、複合的な視野にもとづいて、学際的な議論が可能な学術コミュニティを、東京を拠点として新たに築くことを目指しています。</p>
+                    <p>また、各所属機関・分野で活躍する若手研究者（修士・博士課程の院生、やる気溢れる学部生、Early Career Researcherを含む）による発表・議論・交流の場を作り、研究ネットワークの形成を促進することも理念のひとつです。</p>
+                    <p>他方、年に１回以上は、国外研究者によるゲスト講演など、国際的な学術大会も実施します。各々の分野の最新研究の魅力を分かち合えるような、和やかで楽しい会を一緒に作りましょう！</p>
+                </div>
+                
+                <div class="about-policy">
+                    <h3>本会の基本方針</h3>
+                    <div class="policy-points">
+                        <div class="policy-point">研究報告、卒論・修論・博論の中間発表や成果発表、学会発表のたたき台、資料・調査報告、書評といった、様々な趣旨の発表を幅広く歓迎いたします。</div>
+                        <div class="policy-point">学際的な場であることを意識し、他分野の方にも向けてプレゼンする姿勢、各分野の手法や研究伝統を尊重しつつ、俯瞰的な視野を持ちながら議論を行うことを意識してください。</div>
+                        <div class="policy-point">それぞれの専門分野の研究者の参加・コメントを歓迎致します。</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events section -->
+    <section id="events" class="events">
+        <div class="events-bg-image"></div>
+        <div class="container">
+            <h2 class="section-title">イベント</h2>
+            
+            <div class="event-card featured-event">
+                <div class="event-spotlight">
+                    <span class="spotlight-text">次回イベント</span>
+                </div>
+                <div class="event-date featured-date">
+                    <span class="month">11月</span>
+                    <span class="day">24</span>
+                    <span class="year">2025</span>
+                </div>
+                <div class="event-details featured-details">
+                    <div class="event-header">
+                        <h3>第3回 シルクロード仏教文化研究会（国際研究会）</h3>
+                        <div class="event-badge">国際研究会</div>
+                    </div>
+                    <p class="event-location"><i class="fas fa-map-marker-alt"></i> 東洋文庫 講堂（2F）およびオンライン</p>
+                    <p class="event-time"><i class="far fa-clock"></i> 11:00-16:30</p>
+                    <div class="event-highlight">
+                        <p class="event-description">ネパールと西域の仏教美術と文化財保存をテーマに、海外からの研究者を招いた国際研究会を開催します。参加は無料ですが、事前登録が必要です（11月20日まで）。</p>
+                        <p class="event-description">申し込みは<a href="https://docs.google.com/forms/d/e/1FAIpQLSev2AcNqiVOipvSWk6udmFrkfF30H0_BSFR0J2Y3bxIVQuq6Q/viewform?pli=1" target="_blank">こちらのフォーム</a>からお願いします。</p>
+                    </div>
+                    <div class="pdf-container featured-pdf">
+                        <div class="pdf-preview">
+                            <a href="Third.pdf" class="btn pdf-download featured-download" target="_blank">
+                                <i class="fas fa-file-pdf"></i> 第3回研究会PDFを表示
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="event-card past">
+                <div class="event-date">
+                    <span class="month">7月</span>
+                    <span class="day">20</span>
+                    <span class="year">2025</span>
+                </div>
+                <div class="event-details">
+                    <h3>第2回 シルクロード仏教文化研究会</h3>
+                    <p class="event-location"><i class="fas fa-map-marker-alt"></i> 筑波大学茗荷谷キャンパス</p>
+                    <p class="event-time"><i class="far fa-clock"></i> 13:00-17:50</p>
+                    <p class="event-description">計9名による7件の研究発表・調査報告を予定しており、地域もガンダーラ・西域・東南アジア・奈良、分野も考古・美術・文献・保存科学の全てに渡る、幅広いお話を伺える予定です。</p>
+                    <div class="pdf-container">
+                        <div class="pdf-preview">
+                            <a href="Second.pdf" class="btn pdf-download" target="_blank">
+                                <i class="fas fa-file-pdf"></i> 第2回研究会PDFを表示
+                            </a>
+                        </div>
+                    </div>
+                    <p>※ 「中央アジア仏教文化研究会」から「シルクロード仏教文化研究会」に改称しました。</p>
+                </div>
+            </div>
+            
+            <div class="event-card past">
+                <div class="event-date">
+                    <span class="month">3月</span>
+                    <span class="day">17</span>
+                    <span class="year">2025</span>
+                </div>
+                <div class="event-details">
+                    <h3>第1回 中央アジア仏教文化研究会</h3>
+                    <p class="event-location"><i class="fas fa-map-marker-alt"></i> 筑波大学東京キャンパス 第121講義室</p>
+                    <p class="event-time"><i class="far fa-clock"></i> 13時30分～17時30分</p>
+                    <p class="event-description">第1回目の研究会を開催しました。発表者の方々の充実したご報告と、皆さまの積極的なご参加のお陰で、大変充実した会となりました。懇親会でも活発な交流が行われました。</p>
+                    <div class="pdf-container">
+                        <div class="pdf-preview">
+                            <a href="First.pdf" class="btn pdf-download" target="_blank">
+                                <i class="fas fa-file-pdf"></i> 第1回研究会PDFを表示
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 主催者情報 -->
+            <div id="organizers" class="organizers-section">
+                <h3>主催者</h3>
+                
+                <!-- 谷口陽子教授 -->
+                <div class="organizer-single">
+                    <div class="organizer-header">
+                        <img src="images/谷口陽子.png" alt="谷口陽子" class="organizer-image-large">
+                        <div class="organizer-title">
+                            <h4>谷口 陽子 Yoko Taniguchi, 博士（文学）</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="organizer-details">
+                        <p><strong>谷口陽子 Yoko Taniguchi, 博士（文学）</strong><br>
+筑波大学人文社会系 教授</p>
+
+<p><strong>◆研究テーマ◆</strong><br>
+考古科学、保存科学、壁画の技法材料・製作技術研究</p>
+
+<p>モノの材質やそれを利用する技術について、人文科学的な側面とあわせて自然科学的な側面から、その普遍性について意識をしつつ研究することに興味を持っています。とくに近年は、中央アジア諸国の壁画の彩色材料と技法について調査をしています。</p>
+
+<p><strong>◆研究業績◆</strong><br>
+・13歳からの考古学シリーズ『なんで人は青を作ったの？青色の歴史を探る旅』（2025年）<br>
+・中央アジアの壁画の彩色技法と材料について ─バーミヤーン遺跡の仏教壁画を中心に：周辺地域・構造からの視点─（2025年）<br>
+・文化財保存修復学会業績賞（2021年）<br>
+・読売国際協力賞（2020年）<br>
+・アフガニスタン出土仏頭・デッサン展覧会：（メタバースによるバーチャルミュージアムの試み）<br>
+・『バーミヤーン壁画の材質と技術』<br>
+・シリア、アイン・ダーラ遺跡の保護プロジェクト（文化庁）<br>
+・大エジプト博物館保存修復センター支援事業（JICA）<br>
+他多数（<a href="https://trios.tsukuba.ac.jp/researcher/0000000075" target="_blank">https://trios.tsukuba.ac.jp/researcher/0000000075</a>）</p>
+                </div>
+                
+                <!-- 檜山智美助教 -->
+                <div class="organizer-single">
+                    <div class="organizer-header">
+                        <img src="images/檜山智美.JPG" alt="檜山智美" class="organizer-image-large">
+                        <div class="organizer-title">
+                            <h4>檜山 智美Satomi Hiyama, Ph.D (Art History)</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="organizer-details">
+                        <p><strong>檜山 智美 Satomi Hiyama, Ph.D (Art History)</strong><br>
+東洋大学文学部東洋思想文化学科 助教<br>
+Sächsische Akademie der Wissenschaften zu Leipzig "Wissenschaftliche Bearbeitung der buddhistischen Höhlenmalereien in der Kuča-Region der nördlichen Seidenstraße" External Researcher<br>
+龍谷大学世界仏教文化研究センター 研究員</p>
+
+<p><strong>◆研究テーマ◆</strong><br>
+仏教図像学、西域仏教美術史、クチャ（亀茲）と敦煌における5～7世紀の石窟寺院とその壁画</p>
+
+<p>シルクロードの仏教石窟寺院の壁画図像を研究しています。図像学のアプローチを軸に、考古学、仏教学、歴史学、保存科学などの研究成果も参照しつつ、石窟空間と壁画から読み取れる情報を学際的に分析することで、5～7世紀の西域の仏教文化の実態を解き明かす研究に取り組んでいます。</p>
+
+<p>ベルリン国立アジア美術館にて2010～2016年にかけて研究員として勤務し、ベルリン蔵の西域仏教壁画片を研究対象とした博士論文を2014年にベルリン自由大学へ提出しました。</p>
+
+<p>これまで国内外で学際的な研究の場に身を置く機会が多く、様々な視野・アプローチからの議論から生まれる科学反応の面白さとアドバンテージを体感してきました。この研究会も、様々な分野の研究者同士が、それぞれの分野の研究の面白さや新たな視野を共有し合いつつ新たな学術の地平を目指せるような、開かれた場となることを期待しています。</p>
+
+<p><strong>◆出版物（代表的なもの）◆</strong><br>
+・Habata, Hiromi & Hiyama, Satomi (eds.), Variety of Jātaka and Avadāna Transmission: Proceedings of the International Symposium held on the 27th and 28th of November 2023 at the International College for Postgraduate Buddhist Studies. New Delhi: DEV Publisher, 2025.<br>
+・Vignato, Giuseppe & Hiyama, Satomi, with Appendices by Kieffer-Pülz, Petra & Taniguchi, Yoko, 2022, Traces of the Sarvāstivādins in the Buddhist Monasteries of Kucha. New Delhi: DEV Publishers & Distributors, Leipzig Kucha Studies 3.<br>
+・魏正中・桧山智美『龟兹早期寺院中的说一切有部遗迹探真』上海古籍出版社、2024年.<br>
+・檜山智美「敦煌莫高窟第二八五窟西壁壁画に見られる星宿図像と石窟全体の構想について」『仏教芸術』第5号、2020年、pp. 11–29 (第3回國華奨励賞受賞).<br>
+その他多数（<a href="https://researchmap.jp/satomihiyama" target="_blank">Researchmap</a>参照）</p>
+                    </p>
+                    </div>
+                </div>
+                
+                <!-- 事務局セクション -->
+                <div class="student-researchers-section">
+                    <h3>事務局</h3>
+                    
+                    <div class="student-researcher">
+                        <h4>山根萌々花（筑波大学 人文社会科学研究群 博士課程後期）</h4>
+                        <ul>
+                            <li>「中央アジアにおける仏教塑像の製作」（第1回）</li>
+                            <li>「人文学における光学調査の方法と活用」（第2回）</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="student-researcher">
+                        <h4>杉山兵介（国際仏教学大学院大学 仏教学研究科 博士課程前期）</h4>
+                        <ul>
+                            <li>「月と大地の菩提薩埵――『月蔵経』と『十輪経』の近縁性について」（第1回）</li>
+                            <li>「春日山の石窟美術:文献と赤外線撮影結果からのアプローチ」（第2回 共同発表）</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="student-researcher">
+                        <h4>川崎叶太（国際仏教学大学院大学 仏教学研究科 博士課程前期）</h4>
+                        <ul>
+                            <li>「ガンダーラ訪問報告――2025 Woodenfish-Waksaw Seminar on Gandhara Buddhism に参加して」（第1回）</li>
+                            <li>「春日山の石窟美術:文献と赤外線撮影結果からのアプローチ」（第2回 共同発表）</li>
+                        </ul>
+                    </div>
+                    
+                    <p class="student-note">※上記業績は当研究会での発表歴</p>
+                </div>
+            </div>
+            
+            <!-- Modal for enlarged images -->
+            <div id="imageModal" class="modal">
+                <span class="close" onclick="closeImageModal()">&times;</span>
+                <img class="modal-content" id="modalImg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact section -->
+    <section id="contact" class="contact">
+        <div class="contact-bg-image"></div>
+        <div class="container">
+            <h2 class="section-title">お問い合わせ</h2>
+            <p class="contact-intro">研究会へのお問い合わせや参加のご希望は、下記メールアドレスまでご連絡ください。</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <h3>シルクロード仏教文化研究会</h3>
+                    <p class="centered-email">silkroad.buddhism[at]gmail.com<br>メールを送られる際には、[at]を＠に変更してください</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>シルクロード仏教文化研究会</h3>
+                    <p>Silk Road Buddhist Culture Research Group</p>
+                </div>
+                <div class="footer-nav">
+                    <ul>
+                        <li><a href="#about">研究会について</a></li>
+                        <li><a href="#events">イベント</a></li>
+                        <li><a href="#contact">お問い合わせ</a></li>
+                    </ul>
+                </div>
+                <div class="social-links">
+                    <div class="instagram-announcement">
+                        <a href="https://www.instagram.com/silkroad.buddhism/" target="_blank" class="social-icon instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <p>公式Instagramアカウントを開設しました！</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 シルクロード仏教文化研究会. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- トップへ戻るボタン -->
+    <div class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <script>
+    // Image modal functionality
+    function openImageModal(imgSrc) {
+        var modal = document.getElementById("imageModal");
+        var modalImg = document.getElementById("modalImg");
+        modal.style.display = "block";
+        modalImg.src = imgSrc;
+    }
+    
+    function closeImageModal() {
+        document.getElementById("imageModal").style.display = "none";
+    }
+    
+    // Close modal when clicking outside the image
+    window.onclick = function(event) {
+        var modal = document.getElementById("imageModal");
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    
+    // Back to top button functionality
+    window.onscroll = function() {
+        var backToTopButton = document.querySelector('.back-to-top');
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            backToTopButton.classList.add('visible');
+        } else {
+            backToTopButton.classList.remove('visible');
+        }
+    };
+    
+    document.querySelector('.back-to-top').addEventListener('click', function() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    });
+    </script>
+    
+    <!-- Main script file -->
+    <script src="script.js"></script>
+</body>
+</html>
